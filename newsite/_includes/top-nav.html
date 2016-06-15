@@ -1,0 +1,33 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav navbar-right" id="top-menu">
+    <!-- those contained by old version website
+    <li><a class="menu" href="#home_page">HOME</a></li>
+    <li><a class="menu" href="#about_page">ABOUT</a></li>
+    <li><a class="menu" href="#diagram_page">ARCHITECTURE</a></li>
+    <li><a class="menu" href="#modules_page">MODULES</a></li>
+    <li><a class="menu" href="#usecase_page">USE CASES</a></li>
+    <li><a class="menu" href="#community_page">COMMUNITY</a></li>
+     -->
+    <li {% if page.key == "home" %}class="active"{% endif %}><a class="menu" href="{{ "/index.html" | prepend: site.baseurl }}">HOME</a></li>
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle">DOCS <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        {% capture doc_url_prefix %}{{ site.doc_baseurl }}{{ site.latest_version }}{% endcapture %}
+        <li><a href="{{ '/index.html' | prepend: doc_url_prefix }}">Latest Release</a></li>
+        {% if site.retained_versions.size > 0 %}
+        <li class="divider"></li>
+          {% for version_port in site.retained_versions limit: site.retained_version_limit %}
+            {% capture version %}{{ version_port | split:":" | first }}{% endcapture %}
+            {% capture port %}{{ version_port | split:":" | last }}{% endcapture %}
+            {% capture doc_url_prefix %}{{ site.doc_baseurl | replace_first:"4001",port }}{{ version }}{% endcapture %}
+        <li><a href="{{ '/index.html' | prepend: doc_url_prefix }}">{{ version }}</a></li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </li>
+    <li {% if page.key == "downloads" %}class="active"{% endif %}><a class="menu" href="{{ "/downloads.html" | prepend: site.baseurl }}">DOWNLOADS</a></li>
+    <li {% if page.key == "community" %}class="active"{% endif %}><a class="menu" href="{{ "/community.html" | prepend: site.baseurl }}">COMMUNITY</a></li>
+    <li {% if page.key == "development" %}class="active"{% endif %}><a class="menu" href="{{ "/development.html" | prepend: site.baseurl }}">DEVELOPMENT</a></li>
+    <li {% if page.key == "blogs" %}class="active"{% endif %}><a class="menu" href="{{ "/blogs.html" | prepend: site.baseurl }}">BLOGS</a></li>
+  </ul>
+</div>
