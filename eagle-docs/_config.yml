@@ -1,0 +1,116 @@
+# Site settings
+title: Eagle
+email: cn.haochen@gmail.com
+description: Eagle - Secure Hadoop in Real Time
+
+##########################################
+# baseurl: the subpath of the site, here it should end with a version number 
+#          immediately following a "-", version number shouldn't contain "-"
+#          e.g. /projects/incubator-eagle/eagle-release-2.1
+# url: the base hostname & protocol for the site, e.g. http://ci.apache.org
+baseurl: "/projects/incubator-eagle/eagle-release-2.1"
+url: "http://localhost:4001"
+# twitter_username: eagle
+# github_username:  eagle
+
+landing_url: "http://localhost:4000"
+
+# Build settings
+markdown: kramdown
+permalink: date
+
+sass:
+    sass_dir: _sass
+
+left_nav_links:
+  startup:
+    - title: "Release Notes"
+      url: release-notes.html
+    - title: "Frequently Ask Questions"
+      url: frequently-ask-questions.html
+    - title: "Events & Conferences"
+      url: events-and-conferences.html
+    - title: "Terminology"
+      url: terminology.html
+    - title: "Technical Concepts"
+      url: technical-concepts.html
+  installation:
+    - title: "Deploy Eagle in Sandbox"
+      url: deploy-eagle-in-sandbox.html
+    - title: "Deploy Eagle in Cluster"
+      url: deploy-eagle-in-cluster.html
+    - title: "Data Integrations"
+      url: data-integrations.html
+    - title: "Advanced Settings"
+      url: advanced-settings.html
+  tutorials:
+    - title: "Site/Application/Topology management"
+      url: site-application-topology-management.html
+    - title: "Policy management"
+      url: policy-management.html
+    - title: "Data Classification Tutorial"
+      url: data-classification-tutorial.html
+    - title: "Write Advanced Alert Policy"
+      url: write-advanced-alert-policy.html
+    - title: "LDAP Tutorial"
+      url: ldap-tutorial.html
+    - title: "Notification Plugin Management"
+      url: notification-plugin-management.html
+    - title: "Dashboard Tutorial"
+      url: dashboard-tutorial.html
+  howto:
+    - title: "Use Metadata API"
+      url: use-metadata-api.html
+    - title: "Enable HBase Coprocessor"
+      url: enable-hbase-coprocessor.html
+
+#documentations:
+#  - category: Getting Started
+#    links:
+#     - title: Introduction
+#        url: /docs/index.html
+#      - title: Quick Start
+#        url: /docs/quick-start.html
+#      - title: Terminology
+#        url: /docs/terminology.html
+#      - title: Ecosystem
+#        url: /docs/ecosystem.html
+#      - title: Community
+#        url: /docs/community.html
+#      - title: FAQ
+#        url: /docs/FAQ.html
+#  - category: Installation
+#    links:
+#      - title: Deploy Eagle in Sandbox
+#        url: /docs/deployment-in-sandbox.html
+#      - title: Work with configured Sandbox
+#        url: /docs/work-with-configured-sandbox.html
+#      - title: Deploy Eagle in the Production
+#        url: /docs/deployment-in-production.html
+#      - title: Stream Log Data into Kafka
+#        url: /docs/import-hdfs-auditLog.html
+#      - title: Install Eagle Ambari Plugin
+#        url: /docs/ambari-plugin-install.html
+#      - title: Configuration
+#        url: /docs/configuration.html
+#  - category: Tutorial
+#    links: 
+#      - title: Site Management Tutorial
+#        url: /docs/tutorial/setup.html
+#      - title: Eagle Policy Tutorial
+#        url: /docs/tutorial/policy.html
+#      - title: User Profile Tutorial
+#        url: /docs/tutorial/userprofile.html
+#      - title: Data Classification Tutorial
+#        url: /docs/tutorial/classification.html
+#      - title: Eagle LDAP Tutorial
+#        url: /docs/tutorial/ldap.html
+#  - category: Advanced
+#    links: 
+#      - title: Eagle Architecture Highlights
+#        url: /docs/architecture-highlights.html
+#      - title: Policy API Design
+#        url: /docs/policy-api.html
+#      - title: User Profile Machine Learning
+#        url: /docs/user-profile-ml.html
+#

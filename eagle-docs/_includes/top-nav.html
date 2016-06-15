@@ -1,0 +1,24 @@
+{% capture parts %}{{ site.baseurl | split:"/" }}{% endcapture %}
+{% assign version = "?" %}
+{% for part in parts reversed %}
+  {% if part == "" %}{% continue %}{% endif %}
+  {% capture version %}{{ part | split:"-" | last }}{% endcapture %}
+  {% if version != "" %}{% break %}{% endif %}
+{% endfor %}
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav navbar-right" id="top-menu">
+    <!-- those contained by old version website
+    <li><a class="menu" href="#home_page">HOME</a></li>
+    <li><a class="menu" href="#about_page">ABOUT</a></li>
+    <li><a class="menu" href="#diagram_page">ARCHITECTURE</a></li>
+    <li><a class="menu" href="#modules_page">MODULES</a></li>
+    <li><a class="menu" href="#usecase_page">USE CASES</a></li>
+    <li><a class="menu" href="#community_page">COMMUNITY</a></li>
+     -->
+    <li {% if page.key == "overview" %}class="active"{% endif %}><a class="menu" href="{{ "/index.html" | prepend: site.baseurl }}">OVERVIEW (V{{ version }})</a></li>
+    <li {% if page.key == "startup" %}class="active"{% endif %}><a class="menu" href="{{ "/release-notes.html" | prepend: site.baseurl }}">GETTING STARTED</a></li>
+    <li {% if page.key == "installation" %}class="active"{% endif %}><a class="menu" href="{{ "/deploy-eagle-in-sandbox.html" | prepend: site.baseurl }}">INSTALLATION</a></li>
+    <li {% if page.key == "tutorials" %}class="active"{% endif %}><a class="menu" href="{{ "/site-application-topology-management.html" | prepend: site.baseurl }}">TUTORIALS</a></li>
+    <li {% if page.key == "howto" %}class="active"{% endif %}><a class="menu" href="{{ "/use-metadata-api.html" | prepend: site.baseurl }}">HOW TO...</a></li>
+  </ul>
+</div>
